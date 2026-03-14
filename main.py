@@ -5,8 +5,8 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 cabins = [
-    {"name": "Pine Cabin", "status": "dirty"},
-    {"name": "Lake Cabin", "status": "clean"},
+    {"name": "Loberg", "status": "dirty", "next_arrival": "Mar 14", "next_guest": "Rob Ribbe"},
+    {"name": "Voy", "status": "clean", "next_arrival": "Mar 14", "next_guest": "Muhia"},
 ]
 
 @app.get("/")
@@ -15,3 +15,9 @@ def home(request: Request):
         "index.html",
         {"request": request, "cabins": cabins}
     )
+
+@app.post("/update/{cabin}")
+def update_status(cabin: str, status: str):
+    for c in cabins:
+        if c["name"] == cabin:
+            c["status"] = status
