@@ -1,96 +1,52 @@
-# This file may be used to create an environment using:
-# $ conda create --name <env> --file <this file>
-# platform: osx-64
-annotated-doc=0.0.4=pypi_0
-annotated-types=0.7.0=pypi_0
-anyio=4.12.1=pypi_0
-archspec=0.2.5=pyhd3eb1b0_0
-boltons=25.0.0=py313hecd8cb5_0
-brotlicffi=1.0.9.2=py313h6d0c2b6_1
-bzip2=1.0.8=h6c40b1e_6
-c-ares=1.19.1=h6c40b1e_0
-ca-certificates=2025.7.15=hecd8cb5_0
-certifi=2025.8.3=py313hecd8cb5_0
-cffi=1.17.1=py313h9205ec4_1
-charset-normalizer=3.3.2=pyhd3eb1b0_0
-click=8.3.1=pypi_0
-conda=25.7.0=py313hecd8cb5_0
-conda-libmamba-solver=25.4.0=pyhdf14ebd_1
-conda-package-handling=2.4.0=py313hecd8cb5_0
-conda-package-streaming=0.12.0=py313hecd8cb5_0
-cpp-expected=1.1.0=h1962661_0
-curl=8.14.1=h833e679_1
-distro=1.9.0=py313hecd8cb5_0
-expat=2.7.1=h6d0c2b6_0
-fastapi=0.135.1=pypi_0
-fmt=9.1.0=ha357a0b_1
-frozendict=2.4.2=py313hecd8cb5_0
-gettext=0.21.0=h4e8c18a_2
-git=2.45.2=pl5402h9ac420b_2
-greenlet=3.3.2=pypi_0
-h11=0.16.0=pypi_0
-icu=73.1=hcec6c5f_0
-idna=3.7=py313hecd8cb5_0
-jinja2=3.1.6=pypi_0
-jsonpatch=1.33=py313hecd8cb5_1
-jsonpointer=3.0.0=py313hecd8cb5_0
-libarchive=3.7.7=h4c66a04_0
-libcurl=8.14.1=h1448931_1
-libcxx=19.1.7=haebbb44_3
-libev=4.33=h9ed2024_1
-libffi=3.4.4=hecd8cb5_1
-libiconv=1.16=h6c40b1e_3
-libmamba=2.0.5=hfd235c6_1
-libmambapy=2.0.5=py313h1962661_1
-libmpdec=4.0.0=h46256e1_0
-libnghttp2=1.57.0=h9beae6a_0
-libsolv=0.7.30=h2761308_1
-libssh2=1.11.1=h3a17b82_0
-libxml2=2.13.8=h6070cd6_0
-llvm-openmp=19.1.7=h5048363_2
-lz4-c=1.9.4=hcec6c5f_1
-markupsafe=3.0.3=pypi_0
-menuinst=2.3.1=py313hecd8cb5_0
-ncurses=6.5=h923df54_0
-nlohmann_json=3.11.2=hcec6c5f_0
-openssl=3.0.17=hee2dfae_0
-packaging=25.0=py313hecd8cb5_0
-pcre2=10.42=h9b97e30_1
-perl=5.40.2=0_h46256e1_perl5
-pip=26.0.1=pyhc872135_0
-platformdirs=4.3.7=py313hecd8cb5_0
-pluggy=1.5.0=py313hecd8cb5_0
-pybind11-abi=5=hd3eb1b0_0
-pycosat=0.6.6=py313h46256e1_2
-pycparser=2.21=pyhd3eb1b0_0
-pydantic=2.12.5=pypi_0
-pydantic-core=2.41.5=pypi_0
-pysocks=1.7.1=py313hecd8cb5_0
-python=3.13.5=h81a7116_100_cp313
-python_abi=3.13=0_cp313
-readline=8.3=h49f2429_0
-reproc=14.2.4=hcec6c5f_2
-reproc-cpp=14.2.4=hcec6c5f_2
-requests=2.32.4=py313hecd8cb5_0
-ruamel.yaml=0.18.10=py313h46256e1_0
-ruamel.yaml.clib=0.2.12=py313h46256e1_0
-setuptools=78.1.1=py313hecd8cb5_0
-simdjson=3.10.1=h1962661_0
-spdlog=1.11.0=ha357a0b_0
-sqlalchemy=2.0.48=pypi_0
-sqlite=3.50.2=hc8b0dd6_1
-starlette=0.52.1=pypi_0
-tk=8.6.15=h3a5a201_0
-tqdm=4.67.1=py313h653c010_0
-truststore=0.10.1=py313hecd8cb5_0
-typing-extensions=4.15.0=pypi_0
-typing-inspection=0.4.2=pypi_0
-tzdata=2026a=he532380_0
-urllib3=2.5.0=py313hecd8cb5_0
-uvicorn=0.41.0=pypi_0
-wheel=0.45.1=py313hecd8cb5_0
-xz=5.6.4=h46256e1_1
-yaml-cpp=0.8.0=hcec6c5f_1
-zlib=1.2.13=h4b97444_1
-zstandard=0.23.0=py313h5bcdf72_1
-zstd=1.5.6=h138b38a_0
+annotated-doc==0.0.4
+annotated-types==0.7.0
+anyio==4.12.1
+archspec @ file:///home/task_175812491784513/conda-bld/archspec_1758124989039/work
+boltons @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_1cfrddp8h_/croot/boltons_1751383740352/work
+brotlicffi @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_05qpoetyrv/croot/brotlicffi_1736182869800/work
+certifi @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_541lf40aku/croot/certifi_1754570641531/work/certifi
+cffi @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_51d1gdg4kr/croot/cffi_1736183297412/work
+charset-normalizer @ file:///croot/charset-normalizer_1721748349566/work
+click==8.3.1
+conda @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_a08klfky3c/croot/conda_1754469521713/work/conda-src
+conda-libmamba-solver @ file:///opt/miniconda3/conda-bld/conda-libmamba-solver_1761744809966/work/src
+conda-package-handling @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b5_vfr2fqi/croot/conda-package-handling_1731369042242/work
+conda_package_streaming @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_b617jwseui/croot/conda-package-streaming_1751307514977/work
+distro @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/distro_1728607015893/work
+fastapi==0.135.1
+frozendict @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/frozendict_1728632786107/work
+gh==0.0.4
+gitdb==4.0.12
+GitPython==3.1.46
+greenlet==3.3.2
+h11==0.16.0
+idna @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/idna_1728594952911/work
+Jinja2==3.1.6
+jsonpatch @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/jsonpatch_1728612838217/work
+jsonpointer @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_d0dumz8dua/croot/jsonpointer_1753788448378/work
+libmambapy @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_bd_xm961h4/croot/mamba-split_1734469689868/work/libmambapy
+MarkupSafe==3.0.3
+menuinst @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_08pr2zh0q9/croot/menuinst_1753464594579/work
+packaging @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_95hd3yozva/croot/packaging_1753775365688/work
+platformdirs @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_f8agv_yepz/croot/platformdirs_1744273051859/work
+pluggy @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_70ykkrsb12/croot/pluggy_1733169619735/work
+pycosat @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_67p9tvgx9q/croot/pycosat_1736868714508/work
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pydantic==2.12.5
+pydantic_core==2.41.5
+PySocks @ file:///Users/builder/cbouss/perseverance-python-buildout/croot/pysocks_1728595444110/work
+requests @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_3c5r_7_lxu/croot/requests_1750426340266/work
+ruamel.yaml @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_d2rv6_3_xb/croot/ruamel.yaml_1745960311974/work
+ruamel.yaml.clib @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_caqnqpjtlv/croot/ruamel.yaml.clib_1745937161530/work
+setuptools==78.1.1
+smmap==5.0.3
+SQLAlchemy==2.0.48
+starlette==0.52.1
+tqdm @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_b8a_tjze9j/croot/tqdm_1738946058169/work
+truststore @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_b1m_rjiwrp/croot/truststore_1753907183193/work
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+urllib3 @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_f8xnjmnanx/croot/urllib3_1750775879857/work
+uvicorn==0.41.0
+wheel==0.45.1
+zstandard @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_65utj9q8ya/croot/zstandard_1731360545821/work
