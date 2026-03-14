@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Cabin Status</title>
+</head>
+
+<body>
+<h1>Cabin Status</h1>
+
+<table border="1">
+<tr>
+<th>Cabin</th>
+<th>Status</th>
+</tr>
+
+{% for cabin in cabins %}
+<tr>
+<td>{{ cabin.name }}</td>
+<td>{{ cabin.status }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
