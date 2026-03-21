@@ -3,23 +3,48 @@ from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from contextlib import asynccontextmanager
 
-from create_db import engine, SessionLocal, Cabin, Booking, Base, cabins
+# from create_db import engine, SessionLocal, Cabin, Booking, Base, cabins
 
+from base_data import Cabin, Booking, Base, cabins, bookings
+
+from database import engine, SessionLocal
+
+from datetime import date
 
 
 @asynccontextmanager
-async def lifespan(app: FastAPI):
-    #Create tables
+async def lifespan(app):
+
     Base.metadata.create_all(bind=engine)
-    #Add cabin data
+    
     db = SessionLocal()
-    db.add_all(cabins)
+
+    #If the PostgreSQL database is empty, populate it with the cabins and bookings data:
+    if db.query(Cabin).count() == 0:
+        db.add_all(cabins)
+
+    if db.query(Booking).count() == 0:
+        db.add_all(bookings)
+
     db.commit()
     db.close()
-    print('Database and cabins created!')
-    # Allow the rest of the app to run
+
+
     yield
-    #Put anything here that I want to happen on app shutdown
+
+# @asynccontextmanager
+# async def lifespan(app: FastAPI):
+#     #Create tables
+#     Base.metadata.create_all(bind=engine)
+#     #Add cabin data
+#     db = SessionLocal()
+#     db.add_all(cabins)
+#     db.commit()
+#     db.close()
+#     print('Database and cabins created!')
+#     # Allow the rest of the app to run
+#     yield
+#     #Put anything here that I want to happen on app shutdown
 
 app = FastAPI(lifespan=lifespan)
 

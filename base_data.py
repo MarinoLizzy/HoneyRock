@@ -2,14 +2,14 @@ from sqlalchemy import create_engine, Column, String, Integer, Date, ForeignKey
 from sqlalchemy.orm import declarative_base, sessionmaker
 from datetime import date
 
-# Create SQLite database
-DATABASE_URL = "sqlite:///./Housekeeping.db"
+# # Create SQLite database
+# DATABASE_URL = "sqlite:///./Housekeeping.db"
 
-engine = create_engine(DATABASE_URL, echo=True)
-SessionLocal = sessionmaker(bind=engine)
+# engine = create_engine(DATABASE_URL, echo=True)
+# SessionLocal = sessionmaker(bind=engine)
 
 Base = declarative_base()
-
+# 
 # -------------------
 # Tables
 # -------------------
@@ -37,6 +37,24 @@ class Booking(Base):
     Guest = Column(String)
     StartDate = Column(Date)
     EndDate = Column(Date)
+
+bookings = [
+    Booking(
+        CabinName="Wellspring",
+        Guest="Rob Ribbe",
+        StartDate=date(2026, 3, 12),
+        EndDate=date(2026, 3, 15)
+    ),
+    Booking(
+        CabinName="Kenozha",
+        Guest="Charlie Goeke",
+        StartDate=date(2026, 4, 13),
+        EndDate=date(2026, 4, 20)
+    )
+    
+
+
+]
 
 cabins = [
     Cabin(
@@ -97,39 +115,4 @@ cabins = [
     )
 ]
 
-if __name__ == "__main__":
-    # -------------------
-    # Create tables
-    # -------------------
 
-    Base.metadata.create_all(bind=engine)
-
-    # -------------------
-    # Insert sample data
-    # -------------------
-
-    db = SessionLocal()
-
-
-
-    db.add_all(cabins)
-
-    # Add bookings
-    # booking1 = Booking(
-    #     CabinName="CabinA",
-    #     StartDate=date(2026, 3, 12),
-    #     EndDate=date(2026, 3, 15)
-    # )
-
-    # booking2 = Booking(
-    #     CabinName="CabinB",
-    #     StartDate=date(2026, 3, 13),
-    #     EndDate=date(2026, 3, 20)
-    # )
-
-    # db.add_all([booking1, booking2])
-
-    db.commit()
-    db.close()
-
-    print("Database and sample data created!")
