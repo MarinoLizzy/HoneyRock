@@ -12,14 +12,16 @@
 <th>Status</th>
 <th>Next Arrival</th>
 <th>Next Guest</th>
+<th>Num Queen</th>
 </tr>
 
 {% for cabin in cabins %}
 <tr>
-<td>{{ cabin.name }}</td>
-<td>{{ cabin.status }}</td>
-<td>{{ cabin.next_arrival }}</td>
-<td>{{ cabin.next_guest }}</td>
+<td>{{ cabin.Name }}</td>
+<td>{{ cabin.Status }}</td>
+<td>{{ cabin.NextBooking }}</td>
+<td>{{ cabin.NextGuest }}</td>
+<td>{{ cabin.NumQueen }}</td>
 </tr>
 {% endfor %}
 
