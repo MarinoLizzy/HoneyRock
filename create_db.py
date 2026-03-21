@@ -36,90 +36,92 @@ class Booking(Base):
     EndDate = Column(Date)
 
 
-# -------------------
-# Create tables
-# -------------------
 
-Base.metadata.create_all(bind=engine)
+if __name__ == "__main__":
+    # -------------------
+    # Create tables
+    # -------------------
 
-# -------------------
-# Insert sample data
-# -------------------
+    Base.metadata.create_all(bind=engine)
 
-db = SessionLocal()
+    # -------------------
+    # Insert sample data
+    # -------------------
 
-# Add cabins
-cabins = [
-    Cabin(
-        Name='Wellspring',
-        NumQueen=2,
-        NumFull=0,
-        NumTwin=6
-    ),
-    Cabin(
-        Name='Kenozha',
-        NumQueen=1,
-        NumFull=2,
-        NumTwin=3
-    ),
-    Cabin(
-        Name='Living Waters',
-        NumQueen=2,
-        NumFull=0,
-        NumTwin=4
-    ),
-    Cabin(
-        Name='Engedi',
-        NumQueen=1,
-        NumFull=0,
-        NumTwin=3
-    ),
-    Cabin(
-        Name='WPL_101',
-        NumQueen=1,
-        NumFull=0,
-        NumTwin=0
-    ),
-    Cabin(
-        Name='WPL_102',
-        NumQueen=0,
-        NumFull=0,
-        NumTwin=2
-    ),
-    Cabin(
-        Name='WPL_103',
-        NumQueen=1,
-        NumFull=0,
-        NumTwin=0
-    ),
-    Cabin(
-        Name='WPL_104',
-        NumQueen=1,
-        NumFull=0,
-        NumTwin=0
-    )
-]
+    db = SessionLocal()
+
+    # Add cabins
+    cabins = [
+        Cabin(
+            Name='Wellspring',
+            NumQueen=2,
+            NumFull=0,
+            NumTwin=6
+        ),
+        Cabin(
+            Name='Kenozha',
+            NumQueen=1,
+            NumFull=2,
+            NumTwin=3
+        ),
+        Cabin(
+            Name='Living Waters',
+            NumQueen=2,
+            NumFull=0,
+            NumTwin=4
+        ),
+        Cabin(
+            Name='Engedi',
+            NumQueen=1,
+            NumFull=0,
+            NumTwin=3
+        ),
+        Cabin(
+            Name='WPL_101',
+            NumQueen=1,
+            NumFull=0,
+            NumTwin=0
+        ),
+        Cabin(
+            Name='WPL_102',
+            NumQueen=0,
+            NumFull=0,
+            NumTwin=2
+        ),
+        Cabin(
+            Name='WPL_103',
+            NumQueen=1,
+            NumFull=0,
+            NumTwin=0
+        ),
+        Cabin(
+            Name='WPL_104',
+            NumQueen=1,
+            NumFull=0,
+            NumTwin=0
+        )
+    ]
 
 
 
-db.add_all(cabins)
+    db.add_all(cabins)
 
-# Add bookings
-# booking1 = Booking(
-#     CabinName="CabinA",
-#     StartDate=date(2026, 3, 12),
-#     EndDate=date(2026, 3, 15)
-# )
+    # Add bookings
+    # booking1 = Booking(
+    #     CabinName="CabinA",
+    #     StartDate=date(2026, 3, 12),
+    #     EndDate=date(2026, 3, 15)
+    # )
 
-# booking2 = Booking(
-#     CabinName="CabinB",
-#     StartDate=date(2026, 3, 13),
-#     EndDate=date(2026, 3, 20)
-# )
+    # booking2 = Booking(
+    #     CabinName="CabinB",
+    #     StartDate=date(2026, 3, 13),
+    #     EndDate=date(2026, 3, 20)
+    # )
 
-# db.add_all([booking1, booking2])
+    # db.add_all([booking1, booking2])
 
-db.commit()
-db.close()
+    db.commit()
+    db.close()
 
-print("Database and sample data created!")
+    print("Database and sample data created!")
