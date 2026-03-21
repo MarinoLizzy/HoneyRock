@@ -8,6 +8,11 @@ from contextlib import asynccontextmanager
 # from models import Cabin, Base
 from create_db import engine, SessionLocal, Cabin, Booking, Base, cabins
 
+
+from fastapi import Body
+
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     #Create tables
@@ -41,6 +46,20 @@ def home(request: Request):
         "index.html",
         {"request": request, "cabins": cabins}
     )
+
+
+@app.post("/update_status")
+def update_status(cabin_name: str = Body(...), status: str = Body(...)):
+
+    db = SessionLocal()
+
+    cabin = db.query(Cabin).filter(Cabin.Name == cabin_name).first()
+    cabin.Status = status
+
+    db.commit()
+    db.close()
+
+    return {"message": "updated"}
 
 
 # templates = Jinja2Templates(directory="templates")

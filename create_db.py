@@ -19,7 +19,9 @@ class Cabin(Base):
     __tablename__ = "Cabins"
 
     Name = Column(String, primary_key=True)  # unique identifier
-    Status = Column(String) #which will be "Clean", "Dirty", "Occupied", "Winterized"
+    Status = Column(String, default="clean")
+    # Status = Column(String) 
+        #which will be "Clean", "Dirty", "Occupied", "Winterized"
     NumQueen = Column(Integer)
     NumFull = Column(Integer)
     NumTwin = Column(Integer)
