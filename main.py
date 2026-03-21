@@ -1,15 +1,9 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Body
 from fastapi.templating import Jinja2Templates
-from fastapi import FastAPI
 from sqlalchemy.orm import Session
 from contextlib import asynccontextmanager
 
-# from OLD_STUFF.database import engine, SessionLocal
-# from models import Cabin, Base
 from create_db import engine, SessionLocal, Cabin, Booking, Base, cabins
-
-
-from fastapi import Body
 
 
 
@@ -40,6 +34,12 @@ def home(request: Request):
     db = SessionLocal()
     print("querying cabins")
     cabins = db.query(Cabin).all()
+    for cabin in cabins:
+        if cabin.NextBooking is not None:
+            cabin.formatted_date = cabin.NextBooking.strftime("%a, %d %b %Y ")
+        else:
+            cabin.formatted_date = None
+    
     db.close()
 
     return templates.TemplateResponse(
@@ -54,7 +54,7 @@ def update_status(cabin_name: str = Body(...), status: str = Body(...)):
     db = SessionLocal()
 
     cabin = db.query(Cabin).filter(Cabin.Name == cabin_name).first()
-    cabin.Status = status
+    cabin.Status = status # type: ignore
 
     db.commit()
     db.close()
