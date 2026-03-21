@@ -14,6 +14,7 @@ Base = declarative_base()
 # Tables
 # -------------------
 
+
 class Cabin(Base):
     __tablename__ = "Cabins"
 
@@ -35,7 +36,56 @@ class Booking(Base):
     StartDate = Column(Date)
     EndDate = Column(Date)
 
-
+cabins = [
+    Cabin(
+        Name='Wellspring',
+        NumQueen=2,
+        NumFull=0,
+        NumTwin=6
+    ),
+    Cabin(
+        Name='Kenozha',
+        NumQueen=1,
+        NumFull=2,
+        NumTwin=3
+    ),
+    Cabin(
+        Name='Living Waters',
+        NumQueen=2,
+        NumFull=0,
+        NumTwin=4
+    ),
+    Cabin(
+        Name='Engedi',
+        NumQueen=1,
+        NumFull=0,
+        NumTwin=3
+    ),
+    Cabin(
+        Name='WPL_101',
+        NumQueen=1,
+        NumFull=0,
+        NumTwin=0
+    ),
+    Cabin(
+        Name='WPL_102',
+        NumQueen=0,
+        NumFull=0,
+        NumTwin=2
+    ),
+    Cabin(
+        Name='WPL_103',
+        NumQueen=1,
+        NumFull=0,
+        NumTwin=0
+    ),
+    Cabin(
+        Name='WPL_104',
+        NumQueen=1,
+        NumFull=0,
+        NumTwin=0
+    )
+]
 
 if __name__ == "__main__":
     # -------------------
@@ -49,58 +99,6 @@ if __name__ == "__main__":
     # -------------------
 
     db = SessionLocal()
-
-    # Add cabins
-    cabins = [
-        Cabin(
-            Name='Wellspring',
-            NumQueen=2,
-            NumFull=0,
-            NumTwin=6
-        ),
-        Cabin(
-            Name='Kenozha',
-            NumQueen=1,
-            NumFull=2,
-            NumTwin=3
-        ),
-        Cabin(
-            Name='Living Waters',
-            NumQueen=2,
-            NumFull=0,
-            NumTwin=4
-        ),
-        Cabin(
-            Name='Engedi',
-            NumQueen=1,
-            NumFull=0,
-            NumTwin=3
-        ),
-        Cabin(
-            Name='WPL_101',
-            NumQueen=1,
-            NumFull=0,
-            NumTwin=0
-        ),
-        Cabin(
-            Name='WPL_102',
-            NumQueen=0,
-            NumFull=0,
-            NumTwin=2
-        ),
-        Cabin(
-            Name='WPL_103',
-            NumQueen=1,
-            NumFull=0,
-            NumTwin=0
-        ),
-        Cabin(
-            Name='WPL_104',
-            NumQueen=1,
-            NumFull=0,
-            NumTwin=0
-        )
-    ]
 
 
 
