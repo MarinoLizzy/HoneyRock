@@ -3,10 +3,20 @@ from fastapi.templating import Jinja2Templates
 from fastapi import FastAPI
 from sqlalchemy.orm import Session
 
-from database import engine, SessionLocal
-from models import Cabin, Base
+# from OLD_STUFF.database import engine, SessionLocal
+# from models import Cabin, Base
+from create_db import engine, SessionLocal, Cabin, Booking, Base, cabins
 
 Base.metadata.create_all(bind=engine)
+
+#------
+#Add all cabins (initialize db)
+db = SessionLocal()
+db.add_all(cabins)
+db.commit()
+db.close()
+print('Database and cabins created!')
+#----
 
 app = FastAPI()
 
@@ -25,6 +35,7 @@ def home(request: Request):
         "index.html",
         {"request": request, "cabins": cabins}
     )
+
 
 # templates = Jinja2Templates(directory="templates")
 
