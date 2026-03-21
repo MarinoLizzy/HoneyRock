@@ -43,7 +43,7 @@ cabins = [
         NumQueen=2,
         NumFull=0,
         NumTwin=6,
-        NextBooking = '2026-03-12',
+        NextBooking = date(2026, 3, 12),
         NextGuest = "Rob Ribbe"
     ),
     Cabin(
@@ -52,7 +52,7 @@ cabins = [
         NumQueen=1,
         NumFull=2,
         NumTwin=3,
-        NextBooking = '2026-04-01',
+        NextBooking = date(2026, 4, 13),
         NextGuest = "Charlie Goeke"
     ),
     Cabin(
@@ -60,7 +60,8 @@ cabins = [
         Status = 'in-use',
         NumQueen=2,
         NumFull=0,
-        NumTwin=4
+        NumTwin=4,
+        NextBooking = date.today()
     ),
     Cabin(
         Name='Engedi',
