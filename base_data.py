@@ -40,20 +40,23 @@ class Booking(Base):
 
 bookings = [
     Booking(
-        CabinName="Wellspring",
-        Guest="Rob Ribbe",
-        StartDate=date(2026, 3, 12),
-        EndDate=date(2026, 3, 15)
+        CabinName="Living Waters",
+        Guest="Barrett McRay",
+        StartDate=date(2026, 3, 15),
+        EndDate=date(2026, 3, 22)
     ),
     Booking(
-        CabinName="Kenozha",
-        Guest="Charlie Goeke",
-        StartDate=date(2026, 4, 13),
-        EndDate=date(2026, 4, 20)
+        CabinName="Wellspring",
+        Guest="Karen Johnson",
+        StartDate=date(2026, 3, 18),
+        EndDate=date(2026, 3, 22)
+    ),
+    Booking(
+        CabinName="Living Waters",
+        Guest="Rob Ribbe",
+        StartDate=date(2026, 3, 22),
+        EndDate=date(2026, 3, 28)
     )
-    
-
-
 ]
 
 cabins = [
