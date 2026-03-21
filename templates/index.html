@@ -140,5 +140,32 @@ async function updateStatus(cabinName, status) {
 
 </script>
 
+<h2>Add Booking</h2>
+
+<input id="cabin" placeholder="Cabin Name">
+<input id="start" type="date">
+<input id="end" type="date">
+
+<button onclick="addBooking()">Add</button>
+
+<script>
+async function addBooking() {
+
+    await fetch("/add_booking", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            cabin_name: document.getElementById("cabin").value,
+            start_date: document.getElementById("start").value,
+            end_date: document.getElementById("end").value
+        })
+    });
+
+    location.reload();  // refresh to see changes
+}
+</script>
+
 </body>
 </html>

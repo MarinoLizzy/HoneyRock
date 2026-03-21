@@ -86,6 +86,29 @@ def update_status(cabin_name: str = Body(...), status: str = Body(...)):
 
     return {"message": "updated"}
 
+@app.post("/add_booking")
+def add_booking(
+    cabin_name: str = Body(...),
+    guest_name: str = Body(...),
+    start_date: str = Body(...),
+    end_date: str = Body(...)
+):
+
+    db = SessionLocal()
+
+    booking = Booking(
+        CabinName=cabin_name,
+        Guest=guest_name,
+        StartDate=date.fromisoformat(start_date),
+        EndDate=date.fromisoformat(end_date)
+    )
+
+    db.add(booking)
+    db.commit()
+    db.close()
+
+    return {"message": "booking added"}
+
 
 # templates = Jinja2Templates(directory="templates")
 
