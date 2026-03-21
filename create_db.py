@@ -39,18 +39,25 @@ class Booking(Base):
 cabins = [
     Cabin(
         Name='Wellspring',
+        Status = 'dirty',
         NumQueen=2,
         NumFull=0,
-        NumTwin=6
+        NumTwin=6,
+        NextBooking = '2026-03-12',
+        NextGuest = "Rob Ribbe"
     ),
     Cabin(
         Name='Kenozha',
+        Status = 'clean',
         NumQueen=1,
         NumFull=2,
-        NumTwin=3
+        NumTwin=3,
+        NextBooking = '2026-04-01',
+        NextGuest = "Charlie Goeke"
     ),
     Cabin(
         Name='Living Waters',
+        Status = 'in-use',
         NumQueen=2,
         NumFull=0,
         NumTwin=4

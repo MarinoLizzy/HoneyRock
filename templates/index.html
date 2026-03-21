@@ -1,31 +1,126 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Guest Services</title>
+    <title>Cabin Dashboard</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+
+        tr:hover {
+            background-color: #f9fbfd;
+        }
+
+        /* Status colors */
+        .clean {
+            background-color: #e8f8f0;
+        }
+
+        .dirty {
+            background-color: #fdecea;
+        }
+
+        .in-use {
+            background-color: #fff8e6;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            th, td {
+                padding: 10px;
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<h1>Cabin Status</h1>
 
-<table border="1">
+<h1>🏕 Cabin Dashboard</h1>
+
+<div class="table-container">
+<table>
+
 <tr>
-<th>Cabin</th>
-<th>Status</th>
-<th>Next Arrival</th>
-<th>Next Guest</th>
-<th>Num Queen</th>
+    <th>Name</th>
+    <th>Num Queen</th>
+    <th>Next Booking</th>
+    <th>Guest</th>
 </tr>
 
 {% for cabin in cabins %}
-<tr>
-<td>{{ cabin.Name }}</td>
-<td>{{ cabin.Status }}</td>
-<td>{{ cabin.NextBooking }}</td>
-<td>{{ cabin.NextGuest }}</td>
-<td>{{ cabin.NumQueen }}</td>
+<tr class="
+    {% if cabin.NextBooking %}
+        in-use
+    {% else %}
+        clean
+    {% endif %}
+">
+
+    <td><strong>{{ cabin.Name }}</strong></td>
+
+    <td>{{ cabin.NumQueen }}</td>
+
+    <td>
+        {% if cabin.NextBooking %}
+            {{ cabin.NextBooking }}
+        {% else %}
+            —
+        {% endif %}
+    </td>
+
+    <td>
+        {% if cabin.NextGuest %}
+            {{ cabin.NextGuest }}
+        {% else %}
+            —
+        {% endif %}
+    </td>
+
 </tr>
 {% endfor %}
 
 </table>
+</div>
 
 </body>
 </html>
