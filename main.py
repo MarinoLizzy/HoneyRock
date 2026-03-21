@@ -36,9 +36,9 @@ def home(request: Request):
     cabins = db.query(Cabin).all()
     for cabin in cabins:
         if cabin.NextBooking is not None:
-            cabin.formatted_date = cabin.NextBooking.strftime("%a, %d %b %Y ")
+            cabin.formatted_next_booking = cabin.NextBooking.strftime("%a, %d %b %Y ")
         else:
-            cabin.formatted_date = None
+            cabin.formatted_next_booking = None
     
     db.close()
 
