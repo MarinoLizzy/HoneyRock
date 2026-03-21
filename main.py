@@ -65,11 +65,26 @@ def home(request: Request):
         else:
             cabin.formatted_next_booking = None
     
+    # Get all upcoming bookings
+    today = date.today()
+
+    upcoming = (
+        db.query(Booking)
+        .filter(Booking.StartDate >= today)
+        .order_by(Booking.StartDate)
+        # .limit(3)
+        .all()
+    )
+    for b in upcoming:
+        b.pretty_date = b.StartDate.strftime("%a %b %d")
+
     db.close()
 
     return templates.TemplateResponse(
         "index.html",
-        {"request": request, "cabins": cabins}
+        {"request": request, 
+         "cabins": cabins,
+         "upcoming": upcoming}
     )
 
 

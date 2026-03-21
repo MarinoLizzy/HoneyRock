@@ -143,7 +143,7 @@ async function updateStatus(cabinName, status) {
 <h2>Add Booking</h2>
 
 <input id="cabin" placeholder="Cabin Name">
-<input id="guest" placeholder="Guest Name"
+<input id="guest" placeholder="Guest Name">
 <input id="start" type="date">
 <input id="end" type="date">
 
@@ -168,6 +168,20 @@ async function addBooking() {
     location.reload();  // refresh to see changes
 }
 </script>
+
+<h2>📅 Upcoming Arrivals</h2>
+
+<div class="arrivals">
+
+{% for booking in upcoming %}
+<div class="arrival-card">
+    <strong>{{ booking.GuestName or "Guest" }}</strong><br>
+    {{ booking.pretty_date }}<br>
+    {{ booking.CabinName }}
+</div>
+{% endfor %}
+
+</div>
 
 </body>
 </html>
