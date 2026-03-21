@@ -143,6 +143,7 @@ async function updateStatus(cabinName, status) {
 <h2>Add Booking</h2>
 
 <input id="cabin" placeholder="Cabin Name">
+<input id="guest" placeholder="Guest Name"
 <input id="start" type="date">
 <input id="end" type="date">
 
@@ -158,6 +159,7 @@ async function addBooking() {
         },
         body: JSON.stringify({
             cabin_name: document.getElementById("cabin").value,
+            guest_name: document.getElementById("guest").value,
             start_date: document.getElementById("start").value,
             end_date: document.getElementById("end").value
         })
